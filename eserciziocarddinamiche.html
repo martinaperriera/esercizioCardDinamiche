@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio card dinamiche</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #D0F1BF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="titolo text-center mt-3" style="color: green;">Prodotti presenti:</h1>
+
+        <div class="bottoni text-center">
+            <button type="button" class="btn btn-primary" onclick="filtraCarte('tutte')">Tutte</button>
+            <button type="button" class="btn btn-success"
+                onclick="filtraCarte('elettrodomestici')">Elettrodomestici</button>
+            <button type="button" class="btn btn-success" onclick="filtraCarte('smartphone')">Smartphone</button>
+            <button type="button" class="btn btn-success" onclick="filtraCarte('pc')">PC</button>
+        </div>
+
+        <div class="row ms-3 me-3" id="containercards">
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="elettrodomestici">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Asciugacapelli</h5>
+                        <p class="card-text">Descrizione Asciugacapelli</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="smartphone">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Iphone 15</h5>
+                        <p class="card-text">Descrizione Smartphone.</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="pc">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Air</h5>
+                        <p class="card-text">Descrizione pc.</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="smartphone">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Iphone 14</h5>
+                        <p class="card-text">Descrizione Smartphone.</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="elettrodomestici">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Microonde</h5>
+                        <p class="card-text">Descrizione elettrodomestico.</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mt-4 card-item" data-category="elettrodomestici">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Piastra</h5>
+                        <p class="card-text">Descrizione elettrodomestico.</p>
+                        <a href="#" class="btn btn-primary">Lo voglio!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filtraCarte(category) {
+            const cards = document.querySelectorAll('.card-item');
+            cards.forEach(card => {
+                if (category === 'tutte' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
